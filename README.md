@@ -16,7 +16,7 @@ signature and checksums, generates the node key **on your machine** (it is never
 installs a systemd service, peers over the public seed (no VPN) and waits until it is in sync.
 Manage it with `falcon-node status | logs | upgrade | uninstall`.
 
-Requirements: Linux x86_64, glibc 2.35+ (Ubuntu 22.04+, Debian 12+), 2 GB+ RAM, 4 GB free disk, outbound TCP.
+Requirements: Linux x86_64, glibc 2.34+ (Ubuntu 22.04+, Debian 12+, RHEL 9+), 2 GB+ RAM, 4 GB free disk, outbound TCP.
 
 Validator onboarding is open (2.9.62 rules active since height 420,000): admission by approval, 50,000 FPL minimum bond.
 See https://falcon-fpl.com/validator.
@@ -44,7 +44,7 @@ RWTs+gnuKfzPik0Xbcf+m1hD/JrCUnWqaD/OAZFZEY2fcNc90D67mZlM
 ```
 
 ```bash
-V=2.9.61; B=https://github.com/beartec-jpg/falcon-pl-releases/releases/download/v$V
+V=2.9.66; B=https://github.com/beartec-jpg/falcon-pl-releases/releases/download/v$V
 curl -fsSLO $B/SHA256SUMS -O $B/SHA256SUMS.minisig -O $B/falcon-pl-$V-linux-x86_64.tar.gz
 minisign -Vm SHA256SUMS -P RWTs+gnuKfzPik0Xbcf+m1hD/JrCUnWqaD/OAZFZEY2fcNc90D67mZlM
 sha256sum -c --ignore-missing SHA256SUMS
