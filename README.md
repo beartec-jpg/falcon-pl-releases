@@ -18,7 +18,7 @@ Manage it with `falcon-node status | logs | upgrade | uninstall`.
 
 Requirements: Linux x86_64, glibc 2.35+ (Ubuntu 22.04+, Debian 12+), 2 GB+ RAM, 4 GB free disk, outbound TCP.
 
-Validator onboarding (admission by approval, 50,000 FPL minimum bond) opens after the 2.9.62 network upgrade.
+Validator onboarding is open (2.9.62 rules active since height 420,000): admission by approval, 50,000 FPL minimum bond.
 See https://falcon-fpl.com/validator.
 
 ## What is in a release
