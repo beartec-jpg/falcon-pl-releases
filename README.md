@@ -3,12 +3,12 @@
 Public binaries for **Falcon PL**, the post-quantum ledger (Falcon-512 signatures), and the one-command node
 installer for the public testnet (network id **2300**).
 
-Website: https://falcon-ledger.com · Validators: https://falcon-ledger.com/validator
+Website: https://falcon-fpl.com · Validators: https://falcon-fpl.com/validator
 
 ## Install a node (Linux x86_64)
 
 ```bash
-curl -fsSL https://falcon-ledger.com/install.sh | bash
+curl -fsSL https://falcon-fpl.com/install.sh | bash
 ```
 
 This installs an **observer** (non-validator) node: it downloads the latest release from this repo, verifies the
@@ -19,7 +19,7 @@ Manage it with `falcon-node status | logs | upgrade | uninstall`.
 Requirements: Linux x86_64, glibc 2.35+ (Ubuntu 22.04+, Debian 12+), 2 GB+ RAM, 4 GB free disk, outbound TCP.
 
 Validator onboarding (admission by approval, 50,000 FPL minimum bond) opens after the 2.9.62 network upgrade.
-See https://falcon-ledger.com/validator.
+See https://falcon-fpl.com/validator.
 
 ## What is in a release
 
