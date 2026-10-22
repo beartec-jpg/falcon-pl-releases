@@ -22,10 +22,11 @@ command -v minisign >/dev/null || {
 TAG="${FALCON_BETA_TAG:-}"
 if [[ -z "$TAG" ]]; then
   TAG="$(curl -fsSL --retry 3 "https://api.github.com/repos/$REPO/releases?per_page=30" | tr -d '\n' \
-    | grep -oE '"tag_name": *"v[^"]+"[^{}]*"draft": *false[^{}]*"prerelease": *true' \
+    | grep -oE '"tag_name": *"v[^"]+"[^{}]*"draft": *false' \
     | sed -E 's/^"tag_name": *"([^"]+)".*/\1/' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+-beta\.[0-9]+$' \
     | sort -V | tail -1)" || true
-  # Highest beta by version (v2.9.79-beta.3 today), not whichever the API lists first.
+  # Highest published beta tag by version, including a beta promoted to Latest (v2.9.79-beta.3),
+  # so promoting a beta to stable never makes this script fall back to an older beta.
 fi
 [[ -n "$TAG" ]] || die "no beta release is available right now"
 B="https://github.com/$REPO/releases/download/$TAG"; T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
